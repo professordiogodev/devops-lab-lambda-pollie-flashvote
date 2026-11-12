@@ -2,11 +2,18 @@
 
 ## The situation
 
-Pollie has been invited to run a live vote on the main stage of a conference: *"Which language should the next workshop teach?"* The organisers expect **2,000 people to vote in the same ten minutes**, then nothing, ever again.
+```text
+EVENT BRIEF - main stage                                  Friday afternoon
+Question    : "Which language should the next workshop teach?"
+Audience    : 2,000 people
+Voting open : 10 minutes
+After that  : nothing, ever again
+Organisers  : pay only for the votes that happen
+              survive the spike without anyone touching a server
+              keep the bill capped if a bot is pointed at it
+```
 
-Your Pollie stack from the last weeks is a few servers that run all month. Scaling them for ten minutes means planning, load balancers and a bill for capacity that sits idle 99.9% of the time. The organisers ask for something else: pay only for the votes that happen, survive the spike without anyone touching a server, and keep the bill capped if someone points a bot at it.
-
-That is the job serverless was made for. You will build the voting endpoint with **API Gateway (HTTP API) + Lambda + DynamoDB**, and then break it, load it and prove it.
+Your Pollie stack from the last weeks is a few servers that run all month. Scaling them for ten minutes means planning, load balancers and a bill for capacity that sits idle 99.9% of the time. That is the job serverless was made for. You will build the voting endpoint with **API Gateway (HTTP API), Lambda and DynamoDB**, then break it, load it and prove it.
 
 > **Your mission**
 > - Write the Lambda function: `POST /polls/{poll_id}/votes` and `GET /polls/{poll_id}/results`
