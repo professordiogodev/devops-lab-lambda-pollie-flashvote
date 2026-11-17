@@ -15,7 +15,7 @@ q() { aws "$@" 2>/dev/null; }
 echo "== Your code =="
 PY=python3; [ -x .venv/bin/python ] && PY=.venv/bin/python
 check "handler.py: the local tests pass (needs the .venv from Part 1)" bash -c "$PY -m pytest -q tests >/dev/null 2>&1"
-check "no AWS keys written in the repository" bash -c "! grep -rE 'AKIA[0-9A-Z]{16}' . --exclude-dir=.git --exclude=verify.sh"
+check "no AWS keys written in the repository" bash -c "! grep -rE 'AKIA[0-9A-Z]{16}' . --exclude-dir=.git --exclude-dir=.venv --exclude-dir=node_modules --exclude-dir=__pycache__ --exclude=verify.sh"
 
 echo "== DynamoDB =="
 TBL=$(q dynamodb describe-table --table-name $NAME --output json)
