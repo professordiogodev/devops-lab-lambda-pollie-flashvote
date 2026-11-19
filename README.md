@@ -3,7 +3,7 @@
 | | |
 |-|-|
 | **Time** | 105-120 min |
-| **Cost** | free tier, well under one cent |
+| **Cost** | well under one cent |
 | **You need** | An AWS account where you are an administrator (the IAM lab user), the AWS CLI v2 (`aws sts get-caller-identity` works), Python 3.11+, curl and a terminal |
 
 ## How this lab works
